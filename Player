@@ -1,0 +1,51 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+// I put this on the Player.
+/// <summary>
+/// This script defines which sprite the 'Player" uses and its health.
+/// </summary>
+
+public class Player : MonoBehaviour
+{
+    public AudioClip pop;
+   // public GameObject destructionFX;
+
+    public static Player instance; 
+
+    private void Awake()
+    {
+   if (instance == null)
+        {  instance = this;        }
+    }
+
+    //method for damage proceccing by 'Player'
+    public void GetDamage(int damage)   
+    {
+        AudioSource.PlayClipAtPoint(pop, transform.position);
+        Destruction();
+    }    
+
+    //'Player's' destruction procedure
+    void Destruction()
+    {
+    Destroy(gameObject);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
