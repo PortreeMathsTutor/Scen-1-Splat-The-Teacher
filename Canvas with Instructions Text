@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+//I added this to the canvas with the instructions text.
+
+public class Restart : MonoBehaviour
+{
+    public Text restart;
+    public GameObject player;
+
+  void Start()
+    {
+     
+    }
+
+    void Update()
+    {
+        if (player == null) { restart.enabled = true; }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            restart.enabled = false;
+                       SceneManager.LoadScene(2);
+        }
+    }
+}
