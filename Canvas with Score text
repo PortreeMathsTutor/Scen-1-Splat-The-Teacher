@@ -1,0 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+//I added this to the Canvas with the Score Text.
+public class IfInScene0DestroyCanvas : MonoBehaviour
+{
+    // Update is called once per frame
+    void Update()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 0) { Destroy(gameObject); }
+    }
+}
