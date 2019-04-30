@@ -11,3 +11,41 @@ public class IfInScene0DestroyCanvas : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 0) { Destroy(gameObject); }
     }
 }
+
+
+
+
+
+//I also added
+
+
+
+
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+
+public class AttachedToScoreText : MonoBehaviour
+{
+
+    public float score=1; // in the other script the variable score will 
+                        // be defined          public static int score;
+                        // using the word static means the variable can be accessed else where.
+
+
+
+    public Text score1;
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        score = Enemy.score; // We need to acces the score value that is stored in a different script.
+        score1.text = score.ToString("0") + " points";
+    
+    }
+}
+
